@@ -4,9 +4,10 @@ import Home from './Home'
 import Companies from './Companies'
 import Company from './Company'
 import Jobs from './Jobs'
+import Login from './Login'
 
 
-const Routes = () => {
+const Routes = ({setToken}) => {
 
     return(
         <Switch>
@@ -14,7 +15,7 @@ const Routes = () => {
                 <Home />
             </Route>
             <Route exact path='/login'>
-                <Home />
+                <Login setToken={setToken}/>
             </Route>
             <Route exact path='/companies'>
                 <Companies />
