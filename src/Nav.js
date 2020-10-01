@@ -19,6 +19,11 @@ export default function Nav() {
             Profile
           </NavLink>
         </li>
+        <li className="nav-item mr-4">
+          <NavLink className="nav-link" to="/login">
+            Login
+          </NavLink>
+        </li>
       </ul>
        )
 }
