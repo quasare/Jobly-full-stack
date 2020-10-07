@@ -14,13 +14,13 @@ function App(){
 	const [ infoLoaded, setInfoLoaded ] = useState(false);
 	const [ currentUser, setCurrentUser ] = useState(null);
 
-	const [ token, setToken ] = useLocalStorage(TOKEN_STORAGE_ID);
+	const [ _token, setToken ] = useLocalStorage(TOKEN_STORAGE_ID);
 
 	useEffect(
 		() => {
 			async function getCurrentUser(){
 				try {
-					let { username } = decode(token);
+					let { username } = decode(_token);
 					let currentUser = await JoblyApi.getCurrentUser(username);
 					setCurrentUser(currentUser);
 				} catch (err) {
@@ -31,12 +31,16 @@ function App(){
 			setInfoLoaded(false);
 			getCurrentUser();
 		},
-		[ token ]
+		[ _token ]
 	);
+	const handleLogOut = () => {
+		setCurrentUser(null);
+		setToken(null);
+	  };
 	return (
 		<UserContext.Provider value={{ currentUser, setCurrentUser }}>
 			<div className="App">
-				<Nav />
+				<Nav logout={handleLogOut} />
 				<Routes setToken={setToken} />
 			</div>
 		</UserContext.Provider>

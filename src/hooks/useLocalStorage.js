@@ -9,8 +9,8 @@ function useLocalStorage(key, firstValue = null) {
     if (!item) {
       localStorage.removeItem(key);
     } else {
-      console.log(key, item);
-      localStorage.setItem(key, item);
+      
+      localStorage.setItem(key, JSON.stringify(item));
     }
   }, [key, item]);
 
