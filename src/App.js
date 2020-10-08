@@ -22,6 +22,7 @@ function App(){
 				try {
 					let { username } = decode(_token);
 					let currentUser = await JoblyApi.getCurrentUser(username);
+					console.log(currentUser);
 					setCurrentUser(currentUser);
 				} catch (err) {
 					setCurrentUser(null);

@@ -3,12 +3,11 @@ const BASE_URL = process.env.BASE_URL || "http://localhost:3001";
 
 class JoblyApi {
     static async request(endpoint, params = {}, verb = "get") {
-      let token = localStorage.getItem('jobly-token');
+      let _token = localStorage.getItem('jobly-token');
 
-      let _token = JSON.parse(token)
-     console.log(_token); 
-    // console.debug("API Call:", endpoint, params, verb);
-
+      // let _token = JSON.parse(token)
+    console.debug("API Call:", endpoint, params, verb);
+      console.log(_token);
     let q;
     if (verb === "get") {
       q = axios.get(

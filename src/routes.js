@@ -5,6 +5,7 @@ import Companies from './Companies'
 import Company from './Company'
 import Jobs from './Jobs'
 import Login from './Login'
+import Proflie from './Profile'
 
 
 const Routes = ({setToken}) => {
@@ -27,7 +28,7 @@ const Routes = ({setToken}) => {
                 <Company />
             </Route>
             <Route exact path='/profile'>
-                <Home />
+                <Proflie />
             </Route>
         </Switch>
     )
