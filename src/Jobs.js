@@ -26,7 +26,7 @@ function Jobs() {
   return (
     <div className="Jobs col-md-8 offset-md-2">
     
-      <CardList cards={jobs} />
+      <CardList cards={jobs} apply={apply}/>
     </div>
   );
 }
